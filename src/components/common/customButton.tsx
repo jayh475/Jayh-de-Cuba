@@ -12,9 +12,9 @@ export default forwardRef(function CustomButton(
     icon,
     iconPosition = "left",
     fixedHeight = "h-11",
-    hoverColorClass = "hover:bg-sky-500",
-    textColorClass = "text-white",
-    bgColorClass = "bg-black",
+    hoverColorClass = "hover:bg-[#713F49]",
+    textColorClass = "text-[#FFF8EE]",
+    bgColorClass = "bg-[#283E34]",
     selected = false,
   }: {
     type?: React.ButtonHTMLAttributes<HTMLButtonElement>["type"];
@@ -32,7 +32,7 @@ export default forwardRef(function CustomButton(
     iconPosition?: "left" | "right";
     fixedHeight?: string; // New type for fixed height
   },
-  ref: Ref<HTMLButtonElement>
+  ref: Ref<HTMLButtonElement>,
 ) {
   const opacityClass = selected ? "opacity-50" : "";
 
@@ -41,7 +41,7 @@ export default forwardRef(function CustomButton(
       ref={ref}
       id={id}
       type={type}
-      className={`flex items-center  pl-4 pr-4 ${textColorClass} ${bgColorClass} ${opacityClass}  rounded-lg ${hoverColorClass} ${tailwindWidth} ${fixedHeight}`}
+      className={`flex items-center  pl-4 pr-4 ${textColorClass} ${bgColorClass} ${opacityClass}  rounded-full ${hoverColorClass} ${tailwindWidth} ${fixedHeight}`}
       value={value}
       onClick={onClick}
     >

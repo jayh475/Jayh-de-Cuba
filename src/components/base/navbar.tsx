@@ -2,6 +2,7 @@ import { FaRegUser } from "react-icons/fa";
 import { GrMoon } from "react-icons/gr";
 import { useNavigate } from "react-router";
 import logo from "~/images/Jayh de Cuba-logo met boomembleem.png";
+import CustomButton from "~/components/common/customButton";
 
 export default function Navbar() {
   const navigate = useNavigate();
@@ -54,6 +55,12 @@ export default function Navbar() {
             <button className="flex items-center justify-center w-12 h-12 md:w-10 md:h-10 bg-slate-100 rounded-xl transition-all leading-none">
               <GrMoon size={20} />
             </button>
+
+            <CustomButton
+              type="button"
+              placeholder="Contact"
+              tailwindWidth="w-auto"
+            />
           </div>
         </div>
       </div>

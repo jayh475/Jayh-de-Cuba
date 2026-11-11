@@ -1,5 +1,5 @@
-import Roamer from "~/components/pages/roamer";
+import Jayhdecuba from "~/components/pages/jayhdecuba";
 
 export default function Index() {
-  return <Roamer />;
+  return <Jayhdecuba />;
 }
