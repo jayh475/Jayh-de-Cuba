@@ -1,5 +1,8 @@
+import CustomButton from "~/components/common/customButton";
 import { useEffect } from "react";
 import Section from "../common/section";
+import HeroSection from "./portfolio/HeroSection";
+import XseedsRootsProject from "./portfolio/XseedsRootsProject";
 
 const experience = [
   {
@@ -18,9 +21,19 @@ const experience = [
     description: "Ik onderzocht hoe we sensordata toegankelijk konden maken voor patiënten en fysiotherapeuten.",
   },
   {
+    period: "Turnvereniging Longa · nov. 2021 – 2022",
+    role: "Assistent-trainer (vrijwilliger)",
+    description: "Ik ondersteunde de trainer tijdens turnlessen en hielp deelnemers bij het oefenen van turnoefeningen.",
+  },
+  {
     period: "Sony · sep. 2021 – mrt. 2022",
     role: "Shop-in-Shop Manager",
     description: "Ik adviseerde klanten, verzorgde productdemo’s en trainde winkelmedewerkers.",
+  },
+  {
+    period: "Jump XL / You Jump · jan. 2018 – dec. 2018",
+    role: "Freerun- en trampoline-instructeur",
+    description: "Ik gaf freerunlessen en trampolinefitness. Ik paste oefeningen aan het niveau van deelnemers aan, gaf individuele feedback en zorgde voor een veilige leeromgeving.",
   },
 ];
 
@@ -32,6 +45,8 @@ export default function Jayhdecuba() {
 
   return (
     <main className="portfolio-page mx-auto w-[calc(100%-2rem)] max-w-[1320px] pt-10 text-[#272b24] md:w-[calc(100%-5rem)] md:pt-16">
+      <HeroSection />
+
       <Section
         id="over-mij"
         title="Ik breng techniek en mensen samen."
@@ -66,6 +81,8 @@ export default function Jayhdecuba() {
         </ul>
       </Section>
 
+      <XseedsRootsProject />
+
       <footer
         id="contact"
         className="flex scroll-mt-24 flex-col items-start justify-between gap-5 border-t border-[#cec3b5] pb-11 pt-7 md:flex-row md:items-center"
@@ -73,12 +90,12 @@ export default function Jayhdecuba() {
         <h2 className="font-[Georgia,serif] text-[clamp(1.9rem,4vw,3rem)] leading-none tracking-[-.055em] text-[#283e34]">
           Even kennismaken?
         </h2>
-        <a
-          className="inline-flex rounded-full bg-[#283e34] px-5 py-3 text-sm font-semibold text-[#fff8ee] hover:bg-[#713f49] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#713f49]"
+        <CustomButton
           href="mailto:ghasondcuba@gmail.com"
-        >
-          Stuur me een mail
-        </a>
+          placeholder="Stuur me een mail"
+          tailwindWidth="w-auto"
+          className="text-sm font-semibold"
+        />
       </footer>
     </main>
   );

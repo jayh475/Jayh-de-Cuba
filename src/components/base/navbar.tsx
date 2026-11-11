@@ -1,3 +1,4 @@
+import CustomButton from "~/components/common/customButton";
 import { FaRegUser } from "react-icons/fa";
 import { GrMoon } from "react-icons/gr";
 import { useLocation, useNavigate } from "react-router";
@@ -26,6 +27,7 @@ export default function Navbar() {
           <ul className={`col-span-2 row-start-2 flex justify-center gap-4 sm:col-span-1 sm:row-start-auto md:gap-7 ${isHome ? "text-base font-medium text-[#272b24]" : "text-sm"}`}>
             <li><a className="hover:underline" href={isHome ? "#over-mij" : "/#over-mij"}>Over mij</a></li>
             <li><a className="hover:underline" href={isHome ? "#ervaring" : "/#ervaring"}>Ervaring</a></li>
+            {isHome && <li><a className="hover:underline" href="#xseeds-roots">Project</a></li>}
           </ul>
 
           {/* ICON BUTTONS */}
@@ -47,12 +49,13 @@ export default function Navbar() {
               </>
             )}
 
-            <a
+            <CustomButton
               href={isHome ? "#contact" : "/#contact"}
-              className={`inline-flex items-center justify-center rounded-full bg-[#283e34] px-4 text-[#fff8ee] hover:bg-[#713f49] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#713f49] ${isHome ? "h-12 font-semibold sm:min-w-[108px]" : "h-11"}`}
-            >
-              Contact
-            </a>
+              placeholder="Contact"
+              tailwindWidth={isHome ? "w-auto sm:min-w-[108px]" : "w-auto"}
+              fixedHeight={isHome ? "h-12" : "h-11"}
+              className={isHome ? "!px-4 font-semibold" : "!px-4"}
+            />
           </div>
         </div>
       </div>
