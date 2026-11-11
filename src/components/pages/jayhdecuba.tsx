@@ -1,25 +1,85 @@
+import { useEffect } from "react";
 import Section from "../common/section";
 
+const experience = [
+  {
+    period: "Vicrea · nov. 2025 – okt. 2026",
+    role: "Solution Consultant",
+    description: "Ik begeleidde klanten bij implementaties, upgrades en trainingen en maakte technische keuzes begrijpelijk voor gebruikers.",
+  },
+  {
+    period: "Vicrea · sep. 2023 – nov. 2025",
+    role: "Developer & Scrum Master",
+    description: "Ik bouwde webapplicaties, faciliteerde Scrum-events en hielp het team om knelpunten en verbeteringen bespreekbaar te maken.",
+  },
+  {
+    period: "Instituut voor Bewegingsstudies · 2022",
+    role: "Product Owner & Front-end Developer",
+    description: "Ik onderzocht hoe we sensordata toegankelijk konden maken voor patiënten en fysiotherapeuten.",
+  },
+  {
+    period: "Sony · sep. 2021 – mrt. 2022",
+    role: "Shop-in-Shop Manager",
+    description: "Ik adviseerde klanten, verzorgde productdemo’s en trainde winkelmedewerkers.",
+  },
+];
+
 export default function Jayhdecuba() {
+  useEffect(() => {
+    const sectionId = window.location.hash.slice(1);
+    document.getElementById(sectionId)?.scrollIntoView();
+  }, []);
+
   return (
-    <>
-      <main>
-        {/* <HeroSection /> */}
+    <main className="portfolio-page mx-auto w-[calc(100%-2rem)] max-w-[1320px] pt-10 text-[#272b24] md:w-[calc(100%-5rem)] md:pt-16">
+      <Section
+        id="over-mij"
+        title="Ik breng techniek en mensen samen."
+        className="rounded-[28px] bg-[#283e34] px-[clamp(25px,5vw,70px)] py-9 text-[#faf5ed] md:py-[54px]"
+        layoutClassName="grid items-center gap-5 md:grid-cols-[1fr_1.12fr] md:gap-10"
+      >
+        <p className="max-w-[480px] leading-relaxed text-[#f0e7dc]">
+          Van een klant die nieuwe software leert gebruiken tot een team dat
+          tijdens een retro iets lastigs bespreekbaar maakt. Ik luister, vraag
+          door en help mensen hun volgende stap zelf te bepalen. Mijn achtergrond
+          als developer helpt me begrijpen waar teams in de praktijk tegenaan lopen.
+        </p>
+      </Section>
 
-        <Section id="over-mij" title="Over mij">
-          <p>Ik wil begrijpen wat mensen beweegt.</p>
-        </Section>
+      <Section
+        id="ervaring"
+        title="Mijn loopbaan tot nu toe."
+        className="py-12 text-[#283e34] md:py-[70px]"
+        layoutClassName="space-y-7"
+      >
+        <ul className="border-b border-[#cec3b5]">
+          {experience.map(({ period, role, description }) => (
+            <li
+              key={role}
+              className="grid items-baseline gap-2 border-t border-[#cec3b5] py-5 md:grid-cols-[.85fr_1.15fr_1.35fr] md:gap-[22px]"
+            >
+              <small className="text-[#576457]">{period}</small>
+              <h3 className="font-[Georgia,serif] text-[1.4rem] leading-tight text-[#713f49]">{role}</h3>
+              <p className="text-sm leading-relaxed text-[#272b24]">{description}</p>
+            </li>
+          ))}
+        </ul>
+      </Section>
 
-        <Section id="ervaring" title="Ervaring">
-          test
-          {/* <ExperienceTimeline /> */}
-        </Section>
-
-        <Section id="contact" title="Even kennismaken?">
-          test
-          {/* <ContactLinks /> */}
-        </Section>
-      </main>
-    </>
+      <footer
+        id="contact"
+        className="flex scroll-mt-24 flex-col items-start justify-between gap-5 border-t border-[#cec3b5] pb-11 pt-7 md:flex-row md:items-center"
+      >
+        <h2 className="font-[Georgia,serif] text-[clamp(1.9rem,4vw,3rem)] leading-none tracking-[-.055em] text-[#283e34]">
+          Even kennismaken?
+        </h2>
+        <a
+          className="inline-flex rounded-full bg-[#283e34] px-5 py-3 text-sm font-semibold text-[#fff8ee] hover:bg-[#713f49] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#713f49]"
+          href="mailto:ghasondcuba@gmail.com"
+        >
+          Stuur me een mail
+        </a>
+      </footer>
+    </main>
   );
 }

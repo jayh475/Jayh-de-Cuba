@@ -1,3 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+html:has(.portfolio-page),
+body:has(.portfolio-page),
+#root:has(.portfolio-page) {
+  background-color: #efe6da;
+}
+
+body:has(.portfolio-page) {
+  min-height: 100vh;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html:has(.portfolio-page) {
+    scroll-behavior: smooth;
+  }
+}
